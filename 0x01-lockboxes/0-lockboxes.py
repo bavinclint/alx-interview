@@ -1,15 +1,18 @@
 #!/usr/bin/python3
+"""
+A fuction that determines if the boxes can be opened
+"""
+
 
 def canUnlockAll(boxes):
-    """Solves the problem"""
-    visited = [False for i in range(len(boxes))]
-    visited[0] = True
-    stack = [0]
-    while len(stack):
-        box = stack.pop(0)
-        for _box in boxes[box]:
-            if isinstance(_box, int) and _box >= 0 and _box < len(boxes)\
-              and not visited[_box]:
-                visited[_box] = True
-                stack.append(_box)
-    return all(visited)
+    """ determine if it will open the boxes """
+    boxNum = len(boxes)
+    listNum = [0]
+    for i in listNum:
+        for n in boxes[i]:
+            if n not in listNum:
+                if n < boxNum:
+                    myList.append(n)
+    if len(listNum) == boxNum:
+        return True
+    return False
